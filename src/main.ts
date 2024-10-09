@@ -11,26 +11,6 @@ const showMovies = document.querySelector('#showMovies') as HTMLElement;
 
 console.log(inputMovie, btnSearch, btnYearUp, btnYearDown, btnBestRate, showMovies);
 
-// let count: number = 0;
-// const addMovies = (movieArr: [string, string, string, string, string[], string]) => {
-//   showMovies.innerHTML += `
-  // <article id="id${count}">
-  //   <h3>${movieArr[0]}</h3>
-  //   <p>${movieArr[1]}</p>
-  //   <p>${movieArr[2]}</p>
-  //   <p>${movieArr[3]}</p>
-  //   <p>${movieArr[4][0]}</p>
-  //   <p>${movieArr[4][1]}</p>
-  //   <p>${movieArr[5]}</p>
-  // </article>
-// `;
-// };
-
-// movies.forEach((movie) => {
-//   addMovies(movie);
-//   count++;
-// });
-
 function renderMovies(movies: [string, string, string, string, string[], string][]) {
   if (showMovies) {
     showMovies.innerHTML = "";
