@@ -24,8 +24,7 @@ function renderMovies(movies: [string, string, string, string, string[], string]
           <p>${movie[1]}</p>
           <p>${movie[2]}</p>
           <p>${movie[3]}</p>
-          <p>${movie[4][0]}</p>
-          <p>${movie[4][1]}</p>
+          <div>${movie[4].map((genre) => `<p>${genre}</p>`).join("")}</div>
           <p>${movie[5]}</p>
         </article>
       `;
@@ -55,11 +54,29 @@ btnYearUp.addEventListener('click', () => {
 });
 
 btnYearDown.addEventListener('click', () => {
-  const yearUpMovies = movies.toSorted((a, b) => parseInt(b[1]) - parseInt(a[1]));
-  renderMovies(yearUpMovies);
+  const yearDownMovies = movies.toSorted((a, b) => parseInt(b[1]) - parseInt(a[1]));
+  renderMovies(yearDownMovies);
 });
 
 btnBestRate.addEventListener('click', () => {
-  const yearUpMovies = movies.toSorted((a, b) => parseInt(b[5]) - parseInt(a[5]));
-  renderMovies(yearUpMovies);
+  const rateMovies = movies.toSorted((a, b) => parseInt(b[5]) - parseInt(a[5]));
+  renderMovies(rateMovies);
 });
+
+// Steffen version:
+// const renderMovies = (movieParam: [string, string, string, string, string[], string][]) => {
+//   movieParam.forEach((movie) => {
+//     console.log(movie);
+//     showMovies.innerHTML += `<div>
+//     <h2>${movie[0]}</h2>
+//     <p>${movie[1]}</p>
+//     <p>${movie[2]}</p>
+//     <p>${movie[3]}</p>
+//     <p>${movie[4]}</p>
+//     <div>${movie[4].map((genre) => `<p>${genre}</p>`).join("")}</div>
+//     <p>${movie[5]}</p>
+//     </div>`;
+//   });
+// };
+
+// renderMovies(movies);
