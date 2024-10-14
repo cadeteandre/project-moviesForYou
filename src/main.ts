@@ -15,9 +15,8 @@ function renderMovies(movies: [string, string, string, string, string[], string]
   if (showMovies) {
     showMovies.innerHTML = "";
     let countId: number = 0;
-    movies.forEach((movie) => {
+    movies.forEach((movie: [string, string, string, string, string[], string]) => {
       const movieElement = document.createElement("div");
-      movieElement.className = "movie";
       movieElement.innerHTML = `
         <article id="id${countId}">
           <h3>${movie[0]}</h3>
@@ -63,7 +62,7 @@ btnBestRate.addEventListener('click', () => {
   renderMovies(rateMovies);
 });
 
-// Steffen version:
+// todo Steffen version:
 // const renderMovies = (movieParam: [string, string, string, string, string[], string][]) => {
 //   movieParam.forEach((movie) => {
 //     console.log(movie);
@@ -80,3 +79,18 @@ btnBestRate.addEventListener('click', () => {
 // };
 
 // renderMovies(movies);
+
+
+// todo Steffen search button version:
+// ! Viel Besser!!!!
+// btnSearch.addEventListener('click', () => {
+//   const inputMovieLow = inputMovie.value.toLowerCase();
+  
+//   const filteredMovies = movies.filter((elt) => {
+//     const movieTitleLow = elt[0].toLowerCase();
+//     if(movieTitleLow.includes(inputMovieLow)) {
+//       return elt;
+//     }
+//   })
+//   renderMovies(filteredMovies);
+// });
